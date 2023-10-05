@@ -24,7 +24,7 @@ exports[`tests forecast details renders the details component correctly 1`] = `
     <div
       class="forecast-details_temperature"
     >
-      22°C
+      22 °C
     </div>
     <div
       class="forecast-details_date"
