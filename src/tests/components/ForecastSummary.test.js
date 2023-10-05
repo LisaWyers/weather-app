@@ -1,7 +1,6 @@
 import React from "react";
 import ForecastSummary from "../../components/ForecastSummary";
 import { getByTestId, render } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect"
 
 describe("ForecastSummary", () => {
   const validProps = {
