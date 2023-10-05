@@ -1,15 +1,16 @@
-import "../styles/App.css";
-import React from "react";
 import ForecastSummaries from "./ForecastSummaries";
-import ForecastSummary from "./ForecastSummary";
 import LocationDetails from "./LocationDetails";
+import React from "react";
+import "../styles/App.css";
+import ForecastDetails from "./ForecastDetails";
 
-function App({ location, forecasts }) {
-  const { city, country } = location;
+function App(props) {
+  const { forecasts, location } = props;
   return (
     <div className="weather-app">
-      <LocationDetails city={city} country={country} />
+      <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={forecasts} />
+      <ForecastDetails forecast={forecasts[0]} />
     </div>
   );
 }

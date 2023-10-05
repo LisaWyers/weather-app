@@ -1,13 +1,12 @@
 import React from "react";
-import { render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
-import "@testing-library/jest-dom/extend-expect";
+import { getByTestId, render } from "@testing-library/react";
 
 describe("ForecastSummary", () => {
   const validProps = {
-    date: 1111111,
+    date: 111111,
     description: "Stub description",
-    icon: "stubIcon",
+    icon: "StubIcon",
     temperature: {
       min: 12,
       max: 22,
@@ -23,19 +22,10 @@ describe("ForecastSummary", () => {
         temperature={validProps.temperature}
       />
     );
-
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders the correct number of ForecastSummary instances", () => {
-    const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={validProps} />
-    );
-
-    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
-  });
-
-  it("render correct values for props", () => {
+  it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
@@ -44,12 +34,21 @@ describe("ForecastSummary", () => {
         temperature={validProps.temperature}
       />
     );
-
-    expect(getByText("1111111")).toHaveClass("forecast-summary__date");
-    expect(getByText("Stub description")).toHaveClass(
-      "forecast-summary__description"
+    expect(getByText("Thu Jan 01 1970")).toHaveAttribute(
+      "class",
+      "forecast-summary_date"
     );
-    expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
-    expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
+    expect(getByText("Stub description")).toHaveAttribute(
+      "class",
+      "forecast-summary_description"
+    );
+    expect(getByTestId("forecast-icon")).toHaveAttribute(
+      "class",
+      "forecast-summary_icon"
+    );
+    expect(getByText("22°C")).toHaveAttribute(
+      "class",
+      "forecast-summary_temperature"
+    );
   });
 });

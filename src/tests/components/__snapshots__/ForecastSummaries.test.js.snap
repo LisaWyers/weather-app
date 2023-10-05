@@ -1,6 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForecastSummaries renders correctly 1`] = `
+exports[`Forecast summaries renders the summary components correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="forecast-summaries"
+  >
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <div
+        class="forecast-summary_date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary_description"
+      >
+        StubDescription
+      </div>
+      <div
+        class="forecast-summary_icon"
+        data-testid="forecast-icon"
+      >
+        <img />
+      </div>
+      <div
+        class="forecast-summary_temperature"
+      >
+        35°C
+      </div>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <div
+        class="forecast-summary_date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary_description"
+      >
+        StubDescription2
+      </div>
+      <div
+        class="forecast-summary_icon"
+        data-testid="forecast-icon"
+      >
+        <img />
+      </div>
+      <div
+        class="forecast-summary_temperature"
+      >
+        30°C
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ForecastSummaries component renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="forecast-summaries"
@@ -12,13 +73,15 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__date"
       >
-        1111111
+        Thu Jan 01 1970
       </div>
       <div
         class="forecast-summary__icon"
         data-testid="forecast-icon"
       >
-        stubIcon1
+        <img
+          alt="icon showing weather code"
+        />
       </div>
       <div
         class="forecast-summary__temperature"
@@ -28,8 +91,13 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__description"
       >
-        Stub description 1
+        Stub description
       </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
     <div
       class="forecast-summary"
@@ -38,13 +106,48 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__date"
       >
-        2222222
+        Thu Jan 01 1970
       </div>
       <div
         class="forecast-summary__icon"
         data-testid="forecast-icon"
       >
-        stubIcon2
+        <img
+          alt="icon showing weather code"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        23°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description 2
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <div
+        class="forecast-summary__date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <img
+          alt="icon showing weather code"
+        />
       </div>
       <div
         class="forecast-summary__temperature"
@@ -54,8 +157,13 @@ exports[`ForecastSummaries renders correctly 1`] = `
       <div
         class="forecast-summary__description"
       >
-        Stub description2
+        Stub description 3
       </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
   </div>
 </DocumentFragment>

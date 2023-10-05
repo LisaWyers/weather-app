@@ -1,21 +1,28 @@
 import React from "react";
+import iconData from "../data/iconData.json";
 
-const ForecastSummary = (props) => {
-  const { date, icon, temperature, description } = props;
+function ForecastSummary(props) {
+  const { date, description, icon, temperature } = props;
+
+  const weatherCode = icon.slice(0, 1) + "00";
+  const formattedDate = new Date(date).toDateString();
 
   return (
     <div className="forecast-summary" data-testid="forecast-summary">
-      <div className="forecast-summary__date">{date}</div>
-      <div className="forecast-summary__icon" data-testid="forecast-icon">
-        {icon}
+      <div className="forecast-summary_date">{formattedDate}</div>
+
+      <div className="forecast-summary_description">{description}</div>
+
+      <div className="forecast-summary_icon" data-testid="forecast-icon">
+        <img src={iconData[weatherCode]} />
       </div>
-      <div className="forecast-summary__temperature">
+
+      <div className="forecast-summary_temperature">
         {temperature.max}
         &deg;C
       </div>
-      <div className="forecast-summary__description">{description}</div>
     </div>
   );
-};
+}
 
 export default ForecastSummary;
