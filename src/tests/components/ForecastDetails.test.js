@@ -1,57 +1,56 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import {render} from  "@testing-library/react";
+import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
 
-describe("tests forecast details",()=>{
+describe("ForecastDetails component", () => {
+  const validProps = {
+    date: 1111111,
+    temperature: {
+      min: 12,
+      max: 22,
+    },
+    humidity: 80,
+    wind: {
+      speed: 60,
+      direction: "ne",
+    },
+  };
 
-    const Validprops3={
-        temperature:{
-            max:22,
-            min:13
-        },
-        windSpeed:7,
-        date:111111,
-        direction:"north",
-        humidity:70
-    }
-
-    it("renders the details component correctly",()=>{
-        const {asFragment} = render(
-            <ForecastDetails
-                date={Validprops3.date}
-                temperature={Validprops3.temperature}
-                windSpeed={Validprops3.windSpeed}
-                direction={Validprops3.direction}
-                humidity={Validprops3.humidity}
-            />
-    )
+  it("Renders correctly", () => {
+    const { asFragment } = render(<ForecastDetails forecast={validProps} />);
 
     expect(asFragment()).toMatchSnapshot();
-    })
+  });
 
-    it("renders correct values for props",()=>{
-      const {getByText} = render(
-          <ForecastDetails
-          temperature={Validprops3.temperature}
-          windSpeed={Validprops3.windSpeed}
-          date={Validprops3.date}
-          direction={Validprops3.direction}
-          humidity={Validprops3.humidity}
-          
-          />
+  it("renders correct values for props", () => {
+    const { getByText, getByTestId } = render(
+      <ForecastDetails forecast={validProps} />,
     );
 
-
-        it("renders correct values for props", () => {
-          render(<ForecastDetails {...validProps} />);
-          const temperatureElement = getByTextWithFallback("22°C");
-          expect(temperatureElement).toBeInTheDocument();
-        });
-    //console.log(Validprops3.temperature, "HELLOOOO")
-    expect(getByText("22°C")).toHaveAttribute("class","forecast-details_temperature")
-    expect(getByText("7")).toHaveAttribute("class","forecast-details_windspeed")
-    expect(getByText("Thu Jan 01 1970")).toHaveAttribute("class","forecast-details_date")
-    expect(getByText("north")).toHaveAttribute("class","forecast-details_direction")
-    expect(getByText("70")).toHaveAttribute("class","forecast-details_humidity")
-        });
-      });
+    expect(getByText("Thu Jan 01 1970")).toHaveAttribute(
+      "class",
+      "forecast-details__date",
+    );
+    expect(getByText(/12/i)).toHaveAttribute(
+      "class",
+      "forecast-details__min-temp",
+    );
+    expect(getByText(/22/i)).toHaveAttribute(
+      "class",
+      "forecast-details__max-temp",
+    );
+    expect(getByText(/80/i)).toHaveAttribute(
+      "class",
+      "forecast-details__humidity",
+    );
+    expect(getByText(/60/i)).toHaveAttribute(
+      "class",
+      "forecast-details__wind-speed",
+    );
+    expect(getByTestId("forecast-details__wind-direction")).toHaveAttribute(
+      "class",
+      "forecast-details__wind-direction",
+    );
+  });
+});

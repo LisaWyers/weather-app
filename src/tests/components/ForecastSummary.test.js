@@ -1,16 +1,18 @@
 import React from "react";
+import { render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
-import { getByTestId, render } from "@testing-library/react";
+import iconData from "../../data/iconData.json";
 
 describe("ForecastSummary", () => {
   const validProps = {
-    date: 111111,
+    date: 1111111,
     description: "Stub description",
-    icon: "StubIcon",
+    icon: "800",
     temperature: {
       min: 12,
       max: 22,
     },
+    onSelect: () => {},
   };
 
   it("renders correctly", () => {
@@ -20,20 +22,15 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
-    const { getByText, getByTestId } = render(
-      <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
-      />
-    );
+    const { getByText, getByTestId } = renderForecastSummary(validProps);
     expect(getByText("Thu Jan 01 1970")).toHaveAttribute(
       "class",
       "forecast-summary_date"

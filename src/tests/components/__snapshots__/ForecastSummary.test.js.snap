@@ -7,26 +7,34 @@ exports[`ForecastSummary renders correctly 1`] = `
     data-testid="forecast-summary"
   >
     <div
-      class="forecast-summary_date"
+      class="forecast-summary__date"
     >
       Thu Jan 01 1970
     </div>
     <div
-      class="forecast-summary_description"
-    >
-      Stub description
-    </div>
-    <div
-      class="forecast-summary_icon"
+      class="forecast-summary__icon"
       data-testid="forecast-icon"
     >
-      <img />
+      <img
+        alt="icon showing weather code"
+        src="https://cdn-icons-png.flaticon.com/512/3222/3222800.png"
+      />
     </div>
     <div
-      class="forecast-summary_temperature"
+      class="forecast-summary__temperature"
     >
       22°C
     </div>
+    <div
+      class="forecast-summary__description"
+    >
+      Stub description
+    </div>
+    <button
+      type="button"
+    >
+      More details
+    </button>
   </div>
 </DocumentFragment>
 `;
