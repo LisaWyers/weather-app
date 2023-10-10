@@ -30,22 +30,30 @@ describe("ForecastSummary", () => {
   });
 
   it("renders correct values for props", () => {
-    const { getByText, getByTestId } = renderForecastSummary(validProps);
+    const { getByText, getByTestId } = render(
+      <ForecastSummary
+        date={validProps.date}
+        description={validProps.description}
+        icon={validProps.icon}
+        temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
+      />
+    );
     expect(getByText("Thu Jan 01 1970")).toHaveAttribute(
       "class",
-      "forecast-summary_date"
+      "forecast-summary__date"
     );
     expect(getByText("Stub description")).toHaveAttribute(
       "class",
-      "forecast-summary_description"
+      "forecast-summary__description"
     );
     expect(getByTestId("forecast-icon")).toHaveAttribute(
       "class",
-      "forecast-summary_icon"
+      "forecast-summary__icon"
     );
     expect(getByText("22°C")).toHaveAttribute(
       "class",
-      "forecast-summary_temperature"
+      "forecast-summary__temperature"
     );
   });
 });

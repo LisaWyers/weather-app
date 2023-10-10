@@ -3,74 +3,35 @@
 exports[`Forecast summaries renders the summary components correctly 1`] = `
 <DocumentFragment>
   <div
-    class="forecast-summaries"
+    class="forecast-summary"
+    data-testid="forecast-summary"
   >
     <div
-      class="forecast-summary"
-      data-testid="forecast-summary"
+      class="forecast-summary__date"
     >
-      <div
-        class="forecast-summary__date"
-      >
-        Thu Jan 01 1970
-      </div>
-      <div
-        class="forecast-summary__icon"
-        data-testid="forecast-icon"
-      >
-        <img
-          alt="icon showing weather code"
-        />
-      </div>
-      <div
-        class="forecast-summary__temperature"
-      >
-        35°C
-      </div>
-      <div
-        class="forecast-summary__description"
-      >
-        StubDescription
-      </div>
-      <button
-        type="button"
-      >
-        More details
-      </button>
+      ...
     </div>
     <div
-      class="forecast-summary"
-      data-testid="forecast-summary"
+      class="forecast-summary_icon"
+      data-testid="forecast-icon"
     >
-      <div
-        class="forecast-summary__date"
-      >
-        Thu Jan 01 1970
-      </div>
-      <div
-        class="forecast-summary__icon"
-        data-testid="forecast-icon"
-      >
-        <img
-          alt="icon showing weather code"
-        />
-      </div>
-      <div
-        class="forecast-summary__temperature"
-      >
-        30°C
-      </div>
-      <div
-        class="forecast-summary__description"
-      >
-        StubDescription2
-      </div>
-      <button
-        type="button"
-      >
-        More details
-      </button>
+      ...
     </div>
+    <div
+      class="forecast-summary__temperature"
+    >
+      ...
+    </div>
+    <div
+      class="forecast-summary__description"
+    >
+      ...
+    </div>
+    <button
+      type="button"
+    >
+      More details
+    </button>
   </div>
 </DocumentFragment>
 `;
