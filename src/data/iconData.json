@@ -1,7 +1,8 @@
 {
-  "800":"https://cdn-icons-png.flaticon.com/512/3222/3222800.png",
-  "211":"https://cdn-icons-png.flaticon.com/512/3238/3238823.png",
-  "602":"https://cdn-icons-png.flaticon.com/512/6661/6661468.png",
-  "781":"https://cdn.imgbin.com/20/25/8/imgbin-tornado-computer-icons-wind-symbol-tornado-7DVfGCmBu9dGfKFXimrNbEAK6.jpg",
-  "721":"https://www.iconpacks.net/icons/2/free-clouds-icon-4269-thumb.png"
+  "200": "http://openweathermap.org/img/wn/11d@2x.png",
+  "300": "http://openweathermap.org/img/wn/09d@2x.png",
+  "500": "http://openweathermap.org/img/wn/10d@2x.png",
+  "600": "http://openweathermap.org/img/wn/13d@2x.png",
+  "700": "http://openweathermap.org/img/wn/50d@2x.png",
+  "800": "http://openweathermap.org/img/wn/01d@2x.png"
 }

@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import App from "../components/App";
+import App from "/Users/admin/projects/weather-app/src/components/App.js";
 
 describe("App", () => {
   it("Renders correctly", () => {

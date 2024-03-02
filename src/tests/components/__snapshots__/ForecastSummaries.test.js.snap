@@ -1,37 +1,112 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Forecast summaries renders the summary components correctly 1`] = `
+exports[`ForecastSummaries component renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="forecast-summary"
-    data-testid="forecast-summary"
+    class="forecast-summaries"
   >
     <div
-      class="forecast-summary__date"
+      class="forecast-summary"
+      data-testid="forecast-summary"
     >
-      ...
+      <div
+        class="forecast-summary__date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <img
+          alt="icon showing weather code"
+          src="http://openweathermap.org/img/wn/01d@2x.png"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        22°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
     <div
-      class="forecast-summary_icon"
-      data-testid="forecast-icon"
+      class="forecast-summary"
+      data-testid="forecast-summary"
     >
-      ...
+      <div
+        class="forecast-summary__date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <img
+          alt="icon showing weather code"
+          src="http://openweathermap.org/img/wn/13d@2x.png"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        23°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description 2
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
     <div
-      class="forecast-summary__temperature"
+      class="forecast-summary"
+      data-testid="forecast-summary"
     >
-      ...
+      <div
+        class="forecast-summary__date"
+      >
+        Thu Jan 01 1970
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <img
+          alt="icon showing weather code"
+          src="http://openweathermap.org/img/wn/09d@2x.png"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        24°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description 3
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
-    <div
-      class="forecast-summary__description"
-    >
-      ...
-    </div>
-    <button
-      type="button"
-    >
-      More details
-    </button>
   </div>
 </DocumentFragment>
 `;

@@ -1,40 +1,61 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import { render, getByTestId } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import ForecastSummaries from "../../components/ForecastSummaries";
 
-describe("Forecast summaries", () => {
-  const validProps2 = [
-    {
-      temperature: {
-        min: 22,
-        max: 35,
+describe("ForecastSummaries component", () => {
+  const validProps = {
+    forecasts: [
+      {
+        date: 1111111,
+        description: "Stub description",
+        icon: 800,
+        temperature: {
+          min: 12,
+          max: 22,
+        },
       },
-      icon: "StubIcon",
-      description: "StubDescription",
-      date: 111111,
-    },
-    {
-      temperature: {
-        min: 12,
-        max: 30,
+      {
+        date: 2222222,
+        description: "Stub description 2",
+        icon: 602,
+        temperature: {
+          min: 13,
+          max: 23,
+        },
       },
-      icon: "StubIcon2",
-      description: "StubDescription2",
-      date: 222222,
-    },
-  ];
+      {
+        date: 3333333,
+        description: "Stub description 3",
+        icon: 301,
+        temperature: {
+          min: 14,
+          max: 24,
+        },
+      },
+    ],
+    onForecastSelect: () => {},
+  };
 
-  it("renders the summary components correctly", () => {
+  it("renders correctly", () => {
     const { asFragment } = render(
-      <ForecastSummaries forecasts={validProps2} />
+      <ForecastSummaries
+        forecasts={validProps.forecasts}
+        onForecastSelect={validProps.onForecastSelect}
+      />,
     );
+
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders forecast summary the correct number of times", () => {
+  it("renders the correct number of ForecastSummary instances", () => {
     const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={validProps2} />
+      <ForecastSummaries
+        forecasts={validProps.forecasts}
+        onForecastSelect={validProps.onForecastSelect}
+      />,
     );
-    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
+
+    expect(getAllByTestId("forecast-summary")).toHaveLength(3);
   });
 });

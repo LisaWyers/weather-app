@@ -1,8 +1,14 @@
-import React from "react";
+const LocationDetails = (props) => {
+  const { city, country, errorMessage } = props;
+  LocationDetails.defaultProps = {
+    errorMessage: "",
+  };
 
-function LocationDetails(props) {
-  const { city, country } = props;
-  return <h1>{`${city},${country}`}</h1>;
-}
+  return (
+    <h1 className="location-details">
+      {errorMessage || `${city}, ${country}`}
+    </h1>
+  );
+};
 
 export default LocationDetails;
